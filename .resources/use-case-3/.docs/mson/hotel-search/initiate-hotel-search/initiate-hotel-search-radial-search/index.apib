@@ -1,0 +1,15 @@
+# <a class="hide-parent" name="rectangular"></a>
+## Initiate Search for Hotels within a Rectangular Geo Region [POST]
+A rectangular search allows you to easily find hotels that are located within a particular area or a given <@ boundingbox @> by using geocodes. When you search for hotels within a rectangular region, you must ensure that the distance is within 250 km and the area is within a rectangle.<br>
+This API allows you to support a <@ mapbasedsearch @> experience based on the view port. For example, you can provide an on-screen map and allow the user to select a rectangular region, which can then be used as the area where the hotel search must be performed. Users can then look at the list of hotels in the defined area to decide which hotel suits their needs.
+
++ Request initiateSearchRectangular (application/json)
+    + Headers
+      cnx-correlationid: hotel-stage-doc-497c-b2e5-2e40b26a9bc2
+      cnx-userip: 127.0.0.1
+      cnx-tenantid: 2ql3bti6juo
+      Accept-Language: en-US
+    + Attributes (initiateSearchRectangular)
+
++ Response 200 (application/json)
+    + Attributes (session)
