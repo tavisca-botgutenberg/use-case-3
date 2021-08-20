@@ -1,0 +1,23 @@
+# <a class="hide-parent" name="GetSearchResultsAPI"></a>
+# Get Hotel Search Results [/hotel/v1.0/search/results]
+The `Get Hotel Search Results` API allows you to retrieve hotel search results based on the search criteria provided in the [`Initiate Hotel Search`](#InitiateSearchAPI) API call, which include the specific location or point of interest, the given guest count (occupants), the stay duration (check-in and check-out dates), and the hotel preferences (such as the hotel rate, the star rating, and the hotel chain) specified. Using this API, you can also specify the customer's <@ point_balance_popup @> and retrieve a list of <@ reward_popup @> options that the <@ customer_popup @> can avail to book a room. The list of reward options that are returned is based on the point balance and the <@ loyalty_program_popup @> that the customer is associated with. For each reward option, the API also returns the redemption details as well as the <@ earncomponent @> applicable for the reward. 
+
+When this API is called for the first time, the API implicitly signals to stop the hotel search, even if the search is still in progress, and finalizes the result set.
+
+When retrieving the search results, you can choose the <@ hotelcontentattributes_popup @> that you want the API to return based on your business use case without compromising on the response size or latency. Additionally, you can specify the <@ pagination @> preferences, such as the number of search results per page, the page from which the search result must be retrieved, and the sort order in which the search results must be returned.
+
+You can also refine or customize your search by specifying <@ filters_body @>. For example, the `minHotelRating` and `maxHotelRating` filters allow the user to view only those hotels that are within the quality of service that they want. With this API, you can retrieve the distance information between the hotel and a selected landmark and sort the search results to display the hotels nearest to the selected landmark, first, on the page. 
+
+The `Get Hotel Search Results` API also comes with the <@ cheapestpricededuplication @> feature, which allows <@ agency @> to ensure that they sell the lowest rate available as customers typically perform price-based shopping. Consider a scenario where the same hotel is returned by multiple suppliers. The cheapest price de-duplication feature ensures that the response returns the hotel from the supplier that provides the lowest rate. In scenarios where multiple suppliers provide the same lowest rate, the response returns the hotel with the highest yield.
+
+The API also supports <a href="../reference-reads#fareBasedRewardOption" target="_blank">fare-based reward options</a>, where the API response returns different rates for the cash-only and points-only rewards for a hotel room option. For more information and to have the loyalty program configured to return fare-based reward options, please contact cxLoyalty Business Team.
+## Get Hotel Search Results [POST]
++ Request getSearchResults (application/json)
+    + Headers
+      cnx-correlationid: hotel-stage-doc-497c-b2e5-2e40b26a9bc2
+      cnx-userip: 127.0.0.1
+      cnx-tenantid: 2ql3bti6juo
+      Accept-Language: en-US
+    + Attributes (getSearchResults)
++ Response 200 (application/json)
+    + Attributes (getresultsresponse)
