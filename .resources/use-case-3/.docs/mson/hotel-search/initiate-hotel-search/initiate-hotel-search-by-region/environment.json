@@ -1,0 +1,16 @@
+{	
+	"environments": [
+		{
+			"baseUrl": "https://hotel-search.qa.cnxloyalty.com",
+			"type": "qa"
+		},
+		{
+			"baseUrl": "https://hotel-search.stage.cnxloyalty.com",
+			"type": "stage"
+		},
+		{
+			"baseUrl": "https://hotel-search.stage.cnxloyalty.com",
+			"type": "prod"
+		}
+	]		
+}
